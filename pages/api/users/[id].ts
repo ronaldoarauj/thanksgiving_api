@@ -24,7 +24,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     try {
         if (method === 'GET') {
             const response = await userController.findByID(query.id as string);
-            return res.status(201).json({ message: 'ok', data: response })
+            return res.status(200).json({ message: 'ok', data: response })
         }
         const response = await userController.findAllUsers()
         return res.status(200).json({ message: 'ok', data: response })
