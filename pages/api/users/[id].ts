@@ -1,5 +1,37 @@
+// pages/api/users/[id].ts
+
+/**
+ * @swagger
+ * /api/users/{id}:
+ *   get:
+ *     summary: Retorna dados com base no ID fornecido
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         description: ID do recurso
+ *         schema:
+ *           type: string
+ *     responses:
+ *       200:
+ *         description: Sucesso
+ *         content:
+ *           application/json:
+ *             example:
+ *               message: 'ok'
+ *               data: {  dados do recurso  }
+ *       500:
+ *         description: Erro interno do servidor
+ *         content:
+ *           application/json:
+ *             example:
+ *               message: 'Internal Server Error'
+ */
+
 import { NextApiRequest, NextApiResponse } from "next";
 import { userController } from "./controllers";
+
+
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
 

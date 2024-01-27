@@ -1,12 +1,18 @@
 // pages/index.tsx
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 
-import React from 'react';
+const Home = () => {
+  const router = useRouter();
 
-const Home: React.FC = () => {
+  // Redireciona para a documentação Swagger quando a página inicial é carregada
+  useEffect(() => {
+    router.push('/swagger');
+  }, []);
+
   return (
     <div>
-      <h1>Bem-vindo à Página Inicial!</h1>
-      <p>Esta é a sua página inicial Next.js com TypeScript.</p>
+      {/* Página inicial vazia, pois será redirecionada para a documentação Swagger */}
     </div>
   );
 };
